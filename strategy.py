@@ -5,8 +5,8 @@ class Strategy:
 
 class MovingAverageStrategy(Strategy):
     def decide(self, prices):
-        current_price = prices[-1]
-        moving_average = prices.rolling(window=20).mean()[-1]
+        current_price = prices.iloc[-1]
+        moving_average = prices.rolling(window=20).mean().iloc[-1]
 
         if current_price > moving_average:
             return "Buy"
